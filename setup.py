@@ -8,7 +8,7 @@ here = path.abspath(path.dirname(__file__))
 with open(path.join(here, "README.md"), encoding="utf-8") as f:
     readme = f.read()
 
-with open(path.join(here, "src", "flatten_dict", "__init__.py"), encoding="utf-8") as f:
+with open(path.join(here, "src", "json_normalize", "__init__.py"), encoding="utf-8") as f:
     version = search(r'VERSION = "(\d+\.\d+\.\d+)"', f.read()).group(1)
 
 setup(

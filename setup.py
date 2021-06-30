@@ -15,6 +15,7 @@ setup(
     name="json-normalize",
     version=version,
     description="Recursively flattens a json-like structure into a list of dicts of depth 1.",
+    license="MIT",
     long_description=readme,
     long_description_content_type="text/markdown",
     url="https://github.com/h-hellstrom/json-normalize",

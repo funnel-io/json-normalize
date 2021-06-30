@@ -9,6 +9,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: install virtual env
+        run: |
+          pip install virtualenv
+          
       - name: make test
         run: |
           make test

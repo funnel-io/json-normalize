@@ -8,11 +8,11 @@ Data association will flows up and down inside dicts although in iterables, e.g.
 
 ```python
 json_normalize.json_normalize(
-    tree: Literal[dict, Iterable],
+    tree: Union[dict, Iterable],
     combine_lists: Literal["chain", "product"] = None,
     drop_nodes: Iterable[str] = (),
     freeze_nodes: Iterable[str] = (),
-    key_joiner: Literal[str, Callable] = ".",
+    key_joiner: Union[str, Callable] = ".",
 )
 ```
 

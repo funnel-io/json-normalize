@@ -1,4 +1,7 @@
-# json_normalize
+# JSON Normalize
+
+![PyPI](https://img.shields.io/pypi/v/json_normalize)
+![PyPI - License](https://img.shields.io/pypi/l/json_normalize)
 
 This package contains a function, json_normalize. It will take a json-like structure and convert it to a map object which returns dicts. Output dicts will have their path joined by ".", this can of course be customized.
 

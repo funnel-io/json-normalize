@@ -8,15 +8,16 @@ from typing import (
     Any,
     Dict,
     Tuple,
+    Union
 )
 
 
 def json_normalize(
-    tree: Literal[dict, Iterable],
+    tree: Union[dict, Iterable],
     combine_lists: Literal["chain", "product"] = None,
     drop_nodes: Iterable[str] = (),
     freeze_nodes: Iterable[str] = (),
-    key_joiner: Literal[str, Callable] = ".",
+    key_joiner: Union[str, Callable] = ".",
 ) -> Generator[dict, None, None]:
     """
     Will flatten a dict-list structure to a list of flat dicts.

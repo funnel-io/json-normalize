@@ -1,13 +1,14 @@
 
 dist: clean-dist
-	python3 setup.py sdist
+	pip3 install --upgrade pip build twine
+	python3 -m build .
 
 setup: venv
 
 venv: dev-packages.txt
 	virtualenv venv --python=${PYTHON_VERSION}
 	. venv/bin/activate && \
- 	pip3 install --upgrade pip && \
+	pip3 install --upgrade pip && \
 	pip3 install --requirement dev-packages.txt
 
 .PHONY: test

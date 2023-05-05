@@ -1,15 +1,6 @@
 from itertools import chain, product
 from collections import defaultdict
-from typing import (
-    Literal,
-    Iterable,
-    Callable,
-    Generator,
-    Any,
-    Dict,
-    Tuple,
-    Union
-)
+from typing import Literal, Iterable, Callable, Generator, Any, Dict, Tuple, Union
 
 
 def json_normalize(
@@ -74,7 +65,7 @@ def _validate_input(
 ):
     allowed_values = ("chain", "product", None)
     if combine_lists not in allowed_values:
-        raise ValueError(f'combine_lists allowed values: {allowed_values}, got {combine_lists}')
+        raise ValueError(f"combine_lists allowed values: {allowed_values}, got {combine_lists}")
 
 
 def _json_normalize(tree, **kwargs) -> Generator[Dict[Tuple, Any], None, None]:
@@ -156,13 +147,7 @@ def _build_helper_message(key_joiner, raw):
         helper[key_joiner(k)].append(k)
 
     helper = {k: v for k, v in helper.items() if len(v) > 1}
-    msg = "\n\n".join(
-        "\n".join(
-            f"\t{v_i} -> {k}"
-            for v_i in v
-        )
-        for k, v in helper.items()
-    )
+    msg = "\n\n".join("\n".join(f"\t{v_i} -> {k}" for v_i in v) for k, v in helper.items())
     return msg
 
 

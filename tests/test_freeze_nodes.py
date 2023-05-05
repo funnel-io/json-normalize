@@ -7,7 +7,7 @@ def test_freeze_nodes_single_node():
         "b": [
             {"c": "x", "d": 2},
             {"c": "y", "d": 3},
-        ]
+        ],
     }
     expected = [
         {
@@ -19,7 +19,7 @@ def test_freeze_nodes_single_node():
             "a": 1,
             "b.c": "y",
             "b.d": 3,
-        }
+        },
     ]
     actual = json_normalize(tree, freeze_nodes=("a",))
     assert list(actual) == expected

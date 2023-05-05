@@ -38,16 +38,13 @@ def test_combine_lists_product():
 def test_multiple_dependant_lists():
     tree = {
         "a": 1,
-        "b": [
-            {"x": "1"},
-            {"x": "2"}
-        ],
+        "b": [{"x": "1"}, {"x": "2"}],
         "c": {
             "d": [
                 {"y": "1"},
                 {"y": "2"},
             ],
-        }
+        },
     }
     expected = [
         {"a": 1, "b.x": "1", "c.d.y": "1"},

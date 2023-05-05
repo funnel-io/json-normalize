@@ -15,10 +15,9 @@ def test_generator_input():
 
 
 def test_nested_generators():
-
     def a_dict_generator(n):
         yield {"a": n}
-        yield {"a": 2*n}
+        yield {"a": 2 * n}
 
     def another_dict_generator():
         yield {"b": 3, "c": a_dict_generator(1)}

@@ -7,7 +7,7 @@ def test_ignore_nodes_single_node():
         "b": [
             {"c": "x", "d": 2},
             {"c": "y", "d": 3},
-        ]
+        ],
     }
     expected = [
         {"b.c": "x", "b.d": 2},
@@ -23,7 +23,7 @@ def test_ignore_nodes_entire_branch():
         "b": [
             {"c": "x", "d": 2},
             {"c": "y", "d": 3},
-        ]
+        ],
     }
     expected = [
         {"a": 1},

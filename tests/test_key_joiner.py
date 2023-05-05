@@ -7,14 +7,10 @@ def test_custom_key_joiner_string():
         "a": 1,
         "b": [
             {"c": "x", "d": 2},
-        ]
+        ],
     }
     expected = [
-        {
-            "a": 1,
-            "b-c": "x",
-            "b-d": 2
-        },
+        {"a": 1, "b-c": "x", "b-d": 2},
     ]
     actual = json_normalize(tree, key_joiner="-")
     assert list(actual) == expected
@@ -25,14 +21,10 @@ def test_custom_key_joiner_function():
         "a": 1,
         "b": [
             {"c": "x", "d": 2},
-        ]
+        ],
     }
     expected = [
-        {
-            "a": 1,
-            "b-c": "x",
-            "b-d": 2
-        },
+        {"a": 1, "b-c": "x", "b-d": 2},
     ]
     actual = json_normalize(tree, key_joiner=lambda p: "-".join(p))
     assert list(actual) == expected
@@ -43,14 +35,10 @@ def test_custom_key_joiner_function_last_node_name():
         "a": 1,
         "b": [
             {"c": "x", "d": 2},
-        ]
+        ],
     }
     expected = [
-        {
-            "a": 1,
-            "c": "x",
-            "d": 2
-        },
+        {"a": 1, "c": "x", "d": 2},
     ]
     actual = json_normalize(tree, key_joiner=last_node_name)
     assert list(actual) == expected
@@ -61,7 +49,7 @@ def test_overwriting_names_should_raise_error():
         "a": 1,
         "b": {
             "a": "1",
-        }
+        },
     }
     with pytest.raises(ValueError):
         list(json_normalize(tree, key_joiner=last_node_name))

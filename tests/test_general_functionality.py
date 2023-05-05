@@ -7,7 +7,7 @@ def test_listless_tree():
         "b": {
             "c": "x",
             "d": 2,
-        }
+        },
     }
     expected = [
         {
@@ -26,7 +26,7 @@ def test_tree_with_list_independant_items():
         "b": [
             {"c": "x", "d": 2},
             {"c": "y", "d": 3},
-        ]
+        ],
     }
     expected = [
         {
@@ -38,7 +38,7 @@ def test_tree_with_list_independant_items():
             "a": 1,
             "b.c": "y",
             "b.d": 3,
-        }
+        },
     ]
     actual = json_normalize(tree)
     assert list(actual) == expected
@@ -60,14 +60,11 @@ def test_list_of_values():
 
 def test_list_input():
     tree = [
-        {
-            "a": 1,
-            "b": {"d": 2}
-        },
+        {"a": 1, "b": {"d": 2}},
         {
             "a": 2,
             "b": {"d": 4},
-        }
+        },
     ]
     expected = [
         {"a": 1, "b.d": 2},
@@ -79,14 +76,11 @@ def test_list_input():
 
 def test_nested_list_input():
     tree = [
-        {
-            "a": 1,
-            "b": [1, 2]
-        },
+        {"a": 1, "b": [1, 2]},
         {
             "a": 2,
             "b": [3, 4],
-        }
+        },
     ]
     expected = [
         {"a": 1, "b": 1},

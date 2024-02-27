@@ -1,9 +1,7 @@
-dist: clean-dist venv
-	. venv/bin/activate && \
-	pip3 install --upgrade pip build twine && \
-	python3 -m build .
-
 setup: venv
+
+dist: clean-dist venv
+	. venv/bin/activate && python3 -m build .
 
 venv: dev-requirements.txt
 	virtualenv venv --python=${PYTHON_VERSION}

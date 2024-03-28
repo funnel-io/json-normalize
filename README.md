@@ -9,6 +9,11 @@ This package contains a function, json_normalize. It will take a json-like struc
 
 Data association will flows up and down inside dicts although in iterables, e.g. lists, data
 
+## Installation
+
+Install the package `json_normalize` version `1.1+` from PyPI.  
+The recommended `requirements.txt` line is `json_normalize~=1.1`.
+
 ## json_normalize.json_normalize
 
 ```python
